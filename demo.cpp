@@ -3,7 +3,7 @@
 #include <functional>
 
 template <typename T>
-struct __class__{
+struct obj{
     T method;
 };
 
@@ -14,13 +14,13 @@ void caller(void (*func)()){
 
 int main(){
 #if 0
-    __class__ inst;
+    obj inst;
     inst.method.push_back( []() { printf("hello_world\n"); } );
 
     inst.method[0]();
 #endif
 
-    __class__<void(*)()> inst2;
+    obj<void(*)()> inst2;
     inst2.method = []() { printf("hello_world\n"); };
     inst2.method();
     inst2.method = []() { printf("good_bye\n"); };
